@@ -99,7 +99,11 @@ const User = () => {
           </table>
         </div>
       ) : (
-        <div>กำลังโหลดข้อมูลผู้ใช้งาน</div>
+        <tr>
+          <td colSpan="6" className="text-center p-4 text-gray-500">
+            กำลังโหลดข้อมูลบัญชีผู้ใช้งาน
+          </td>
+        </tr>
       )}
     </div>
   );

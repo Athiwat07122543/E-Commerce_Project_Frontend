@@ -135,7 +135,7 @@ const Order = () => {
             <div className="font-bold text-center text-2xl">ไม่พบข้อมูล</div>
           )
         ) : (
-          <div className="font-bold text-center text-2xl">ไม่พบข้อมูล</div>
+          <div className="font-bold text-center text-2xl">กำลังโหลดข้อมูลรายการสั่งซื้อ</div>
         )}
       </div>
       <div className="mt-10 flex">
