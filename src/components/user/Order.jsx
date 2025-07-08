@@ -3,7 +3,7 @@ import useStore from "../../store/useStore";
 import { getOrderBy } from "../../api/User";
 import moment from "moment";
 import numeral from "numeral";
-import ReceiptPDF from "./card/ReceiptPDF";
+import ReceiptPDF from "./card/ReceiptPDF"
 
 const Order = () => {
   moment.locale("th");
