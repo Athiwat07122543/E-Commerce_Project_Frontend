@@ -3,7 +3,8 @@ import useStore from "../../store/useStore";
 import { getOrderBy } from "../../api/User";
 import moment from "moment";
 import numeral from "numeral";
-import receiptPDF from "./card/receiptPDFF";
+import ReceiptPDF from "./card/ReceiptPDF";
+
 const Order = () => {
   moment.locale("th");
   const token = useStore((state) => state.token);
@@ -97,7 +98,12 @@ const Order = () => {
                   >
                     ใบสั่งซื้อสินค้า
                   </button>
-                  {popupReceipt && <receiptPDFF getData={item} onClose={()=>setPopupReceipt((prev) => !prev)} />}
+                  {popupReceipt && (
+                    <ReceiptPDF
+                      getData={item}
+                      onClose={() => setPopupReceipt((prev) => !prev)}
+                    />
+                  )}
                   {item.status === "ยังไม่ชำระเงิน" && item.stripeUrl && (
                     <button className="mt-6 ml-12 text-2xl font-bold hover:cursor-pointer border border-gray-200 p-2 shadow hover:bg-gray-300">
                       <a href={item.stripeUrl} target="_blank">

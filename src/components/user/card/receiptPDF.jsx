@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import html2canvas from "html2canvas-pro";
 import { jsPDF } from "jspdf";
-const receiptPDF = ({ getData, onClose }) => {
+
+const ReceiptPDF = ({ getData, onClose }) => {
   const [detail, setDetail] = useState(null);
   const printRef = React.useRef(null);
   const setData = async () => {
@@ -38,7 +39,6 @@ const receiptPDF = ({ getData, onClose }) => {
     const pdfBlob = pdf.output("blob");
     const blobUrl = URL.createObjectURL(pdfBlob);
     window.open(blobUrl, "_blank");
-    // pdf.save('receipt.pdf')
   };
   return (
     <div
@@ -146,4 +146,4 @@ const receiptPDF = ({ getData, onClose }) => {
   );
 };
 
-export default receiptPDF;
+export default ReceiptPDF;
