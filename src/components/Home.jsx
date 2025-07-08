@@ -34,11 +34,10 @@ const Home = () => {
 
   return (
     <div className="flex">
-      <div className="w-[250px] h-screen">
+      <div className="w-[250px]">
         <Sidebar />
       </div>
-
-      <div className="p-4 h-screen flex gap-2 flex-wrap">
+      <div className="p-4 flex gap-2 flex-wrap">
         {Array.isArray(products) ? (
           <>
             {products

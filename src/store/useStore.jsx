@@ -11,6 +11,7 @@ import {
   updateStock,
 } from "../api/User";
 
+
 const useStore = create(
   persist(
     (set, get) => ({
@@ -38,6 +39,7 @@ const useStore = create(
         }
       },
       actionLogout: (async) => {
+
         try {
           set({
             user: null,
@@ -76,7 +78,7 @@ const useStore = create(
           const res = await listProduct();
           const productList = Array.isArray(res.data)
             ? res.data
-            : res.data.data || []; 
+            : res.data.data || [];
           set({ products: productList });
         } catch (err) {
           console.log(err);
