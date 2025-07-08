@@ -40,6 +40,7 @@ const ReceiptPDF = ({ getData, onClose }) => {
     const blobUrl = URL.createObjectURL(pdfBlob);
     window.open(blobUrl, "_blank");
   };
+
   return (
     <div
       style={{ color: "#000" }}
