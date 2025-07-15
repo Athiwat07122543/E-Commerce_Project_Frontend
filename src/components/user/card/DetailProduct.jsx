@@ -44,7 +44,7 @@ const DetailProduct = ({ data, onClose }) => {
                   <img
                     key={index}
                     className="w-[300px] h-[300px] "
-                    src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.imageUrl}`}
+                    src={`http://localhost:3000/uploads/${item.imageUrl}`}
                   />
                 ))}
               </>

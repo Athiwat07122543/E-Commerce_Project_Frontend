@@ -51,7 +51,7 @@ const Order = () => {
                       {item.product.images.length > 0 ? (
                         <img
                           className="h-[140px] w-[200px]"
-                          src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.product.images[0].imageUrl}`}
+                          src={`http://localhost:3000/uploads/${item.product.images[0].imageUrl}`}
                           alt="product"
                         />
                       ) : (
