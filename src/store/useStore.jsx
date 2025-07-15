@@ -11,7 +11,6 @@ import {
   updateStock,
 } from "../api/User";
 
-
 const useStore = create(
   persist(
     (set, get) => ({
@@ -39,7 +38,6 @@ const useStore = create(
         }
       },
       actionLogout: (async) => {
-
         try {
           set({
             user: null,
@@ -57,16 +55,18 @@ const useStore = create(
             return;
           }
           const getListCart = await getCart(token);
-          const listCart = getListCart?.data || [];
+          const listCart = Array.isArray(getListCart?.data || []);
           set({
             cart: listCart.map((item) => ({
               id: item.productId,
-              name: item.product.name,
-              price: item.price,
+              name: item.product?.name ?? "",
+              price: item.price ?? 0,
               count: item.quantity,
-              images: (item.product.images || []).map((img) =>
-                typeof img === "string" ? { imageUrl: img } : img
-              ),
+              images: Array.isArray(item.product?.images)
+                ? item.product.images.map((img) =>
+                    typeof img === "string" ? { imageUrl: img } : img
+                  )
+                : [],
             })),
           });
         } catch (err) {
