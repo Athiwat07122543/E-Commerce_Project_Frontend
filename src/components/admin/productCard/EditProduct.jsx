@@ -98,7 +98,7 @@ const EditProduct = ({ onClose, data, getData }) => {
                       </div>
                       <img
                         className="w-[300px] h-[300px] object-cover max-w-full border border-gray-200 shadow-md"
-                        src={`http://localhost:3000/uploads/${item.imageUrl}`}
+                        src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.imageUrl}`}
                       />
                     </div>
                   ))}

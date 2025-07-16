@@ -47,7 +47,7 @@ const Home = () => {
                     <div className=" h-[200px] w-full text-center items-center">
                       {item.images && item.images.length > 0 ? (
                         <img
-                          src={`http://localhost:3000/uploads/${item.images[0].imageUrl}`}
+                          src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.images[0].imageUrl}`}
                           alt={item.name}
                           className="object-cover h-full w-full hover:scale-105"
                           onClick={() => {
