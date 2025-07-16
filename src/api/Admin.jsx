@@ -82,7 +82,7 @@ export const ordersToDay = async (token) => {
 
 export const getOrdersMonthlySales = async (token) => {
   try {
-    const res = await axios.get(`${API_BASE_URL}/api/ordersmonthly"`, {
+    const res = await axios.get(`${API_BASE_URL}/api/ordersmonthly`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

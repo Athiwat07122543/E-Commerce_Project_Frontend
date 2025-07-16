@@ -55,19 +55,19 @@ const useStore = create(
             return;
           }
           const getListCart = await getCart(token);
-          const listCart = Array.isArray(getListCart?.data || []);
+          const listCart = getListCart?.data || null;
           set({
-            cart: listCart.map((item) => ({
+            cart: (listCart && (listCart.map((item) => ({
               id: item.productId,
               name: item.product?.name ?? "",
               price: item.price ?? 0,
               count: item.quantity,
               images: Array.isArray(item.product?.images)
                 ? item.product.images.map((img) =>
-                    typeof img === "string" ? { imageUrl: img } : img
-                  )
+                  typeof img === "string" ? { imageUrl: img } : img
+                )
                 : [],
-            })),
+            })))),
           });
         } catch (err) {
           console.log(err);
