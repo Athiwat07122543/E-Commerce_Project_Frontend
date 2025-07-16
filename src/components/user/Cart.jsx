@@ -59,7 +59,7 @@ const Cart = () => {
         {cart.length > 0 ? (
           cart.map((item) => (
             <div
-              className=" h-[300px] w-full flex border-gray-200 gap-4 shadow-md border"
+              className=" h-[300px] w-full flex border-gray-200 gap-4 shadow-xl border"
               key={item.id}
             >
               <div className="flex max-w-[400px]">
@@ -103,16 +103,16 @@ const Cart = () => {
                 </div>
                 <div className="flex h-[150px] gap-2 px-10 mt-10">
                   <button
-                    className="font-bold text-xl w-[50px] h-[40px] shadow text-center bg-gray-100 hover:bg-gray-200"
+                    className="font-bold text-xl w-[50px] h-[40px] shadow text-center bg-gray-200 hover:bg-gray-300 hover:cursor-pointer"
                     onClick={() => handleRemoveCount(item.id)}
                   >
                     ลด
                   </button>
-                  <div className="font-bold text-2xl w-[50px] h-[40px] shadow text-center py-1">
+                  <div className="font-bold text-2xl w-[50px] h-[40px] shadow text-center py-1 bg-gray-200">
                     {item.count}
                   </div>
                   <button
-                    className="font-bold text-xl w-[50px] h-[40px] shadow text-center bg-gray-100 hover:bg-gray-200"
+                    className="font-bold text-xl w-[50px] h-[40px] shadow text-center bg-gray-200 hover:bg-gray-300 hover:cursor-pointer"
                     onClick={() => handleAddCount(item.id)}
                   >
                     เพิ่ม

@@ -76,28 +76,28 @@ const Payment = () => {
     <div className="p-4 flex justify-between">
       <div className="w-7/10">
         <div className="h-[360px] ml-8 mt-8 mr-4 shadow-2xl border border-gray-100">
-          <div className="ml-8 mt-8 mr-8  bg-sky-500 text-white w-[160px] h-[50px] items-center text-center py-2 shadow-md hover:bg-sky-600 hover:cursor-pointer text-xl">
-            <button onClick={() => setPopupChangeAddress(true)}>
+          <div className="ml-8 mt-8 mr-8  bg-sky-500 text-white w-[160px] h-[50px] items-center text-center py-2 shadow-md hover:bg-sky-600 hover:cursor-pointer text-xl rounded-xl">
+            <button onClick={() => setPopupChangeAddress(true)} className=" hover:cursor-pointer">
               จัดการที่อยู่จัดส่ง
             </button>
           </div>
           <div className="flex ml-8 mt-4 mr-8 space-x-10">
             <div className="h-[100px]">
               <div className="text-2xl">ชื่อผู้รับ</div>
-              <div className="text-2xl mt-2 border border-gray-100 h-[40px] px-4 w-[400px] bg-gray-100 rounded-xl">
+              <div className="text-2xl mt-2 border border-gray-300 h-[40px] px-4 w-[400px] bg-gray-100 rounded-xl">
                 {address.recipientName || null}
               </div>
             </div>
             <div className="h-[100px]">
               <div className="text-2xl">เบอร์โทรศัพท์</div>
-              <div className="text-2xl mt-2 border border-gray-100 h-[40px] px-4 w-[400px] bg-gray-100 rounded-xl">
+              <div className="text-2xl mt-2 border border-gray-300 h-[40px] px-4 w-[400px] bg-gray-100 rounded-xl">
                 {address.phone || null}
               </div>
             </div>
           </div>
           <div className="h-[100px] ml-8 mt-4 mr-8">
             <div className="text-2xl">ที่อยู่จัดส่ง</div>
-            <div className="text-2xl mt-2 border border-gray-100 h-[40px] px-4 w-full bg-gray-100 rounded-xl">
+            <div className="text-2xl mt-2 border border-gray-300 h-[40px] px-4 w-full bg-gray-100 rounded-xl">
               {address.addressDetail || null}
             </div>
           </div>
@@ -118,8 +118,8 @@ const Payment = () => {
         </div>
       </div>
 
-      <div className="w-3/10 ml-4 mt-8 mr-8 shadow-2xl border border-gray-100">
-        <div className="h-[60px] flex mt-4">
+      <div className="w-3/10 ml-4 mt-8 mr-8 shadow-2xl border border-gray-200 h-fit">
+        <div className="mb-4 flex mt-4">
           <div className="text-3xl w-1/3 text-center">ราคารวม</div>
           <div className="text-4xl font-bold text-red-500 w-1/3 text-center">
             {numeral(getTotalPrice()).format("0,0")}
@@ -129,10 +129,10 @@ const Payment = () => {
         <div className="m-2">
           {cart.map((item, index) => (
             <div
-              className="h-[200px] flex mb-4 border border-gray-200 shadow-md"
+              className="h-[200px] flex mb-4 border border-gray-200 shadow-md bg-gray-100"
               key={index}
             >
-              <div className="w-1/2">
+              <div className="w-1/2 p-2">
                 {item.images && item.images.length > 0 && item.images[0] ? (
                   <img
                     className="w-[240px] h-[180px]"

@@ -72,6 +72,7 @@ const Sidebar = () => {
                 type="checkbox"
                 value={item.id}
                 onChange={handleCategory}
+                className="hover:cursor-pointer"
               />
               <div>{item.name}</div>
             </div>

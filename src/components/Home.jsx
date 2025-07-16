@@ -44,7 +44,7 @@ const Home = () => {
               .sort((a, b) => a.id - b.id)
               .map((item) => (
                 <div key={item.id}>
-                  <div className="p-4 h-[430px] w-[400px] border border-gray-200">
+                  <div className="p-4 h-[430px] w-[400px] border border-gray-200 hover:scale-105 bg-gray-100 shadow-md">
                     <div className=" h-[200px] w-full text-center items-center">
                       {item.images && item.images.length > 0 ? (
                         <img

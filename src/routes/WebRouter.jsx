@@ -44,7 +44,7 @@ const router = createBrowserRouter([
         Component: CartPage,
       },
       {
-        path: "Success",
+        path: "success",
         Component: Success,
       },
       {
