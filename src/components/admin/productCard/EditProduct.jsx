@@ -4,6 +4,7 @@ import { deleteProductImageBy, editProduct } from "../../../api/Product";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useStore from "../../../store/useStore";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 const EditProduct = ({ onClose, data, getData }) => {
   const token = useStore((state) => state.token);
@@ -98,7 +99,7 @@ const EditProduct = ({ onClose, data, getData }) => {
                       </div>
                       <img
                         className="w-[300px] h-[300px] object-cover max-w-full border border-gray-200 shadow-md"
-                        src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.imageUrl}`}
+                        src={`${VITE_BACKEND}/uploads/${item.imageUrl}`}
                       />
                     </div>
                   ))}

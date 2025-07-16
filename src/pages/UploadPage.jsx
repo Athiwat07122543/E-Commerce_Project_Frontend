@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 const UploadPage = () => {
   const hdUpdate = async (e) => {
@@ -12,7 +13,7 @@ const UploadPage = () => {
     try {
       console.log(formData);
       const res = await axios.post(
-        "https://e-commerce-project-backend-mu.vercel.app/api/upload",
+        `${VITE_BACKEND}/api/upload`,
         formData,
         {
           headers: {

@@ -1,9 +1,10 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 export const listProduct = async (count) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/listproduct",
+      `${API_BASE_URL}/api/listproduct`,
       count
     );
 
@@ -16,7 +17,7 @@ export const listProduct = async (count) => {
 
 export const filters = async (data) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/filters", data);
+    const res = await axios.post(`${API_BASE_URL}/api/filters`, data);
     return res;
   } catch (err) {
     console.log(err);
@@ -27,7 +28,7 @@ export const filters = async (data) => {
 export const createProduct = async (token, data) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/createproduct",
+      `${API_BASE_URL}/api/createproduct`,
       data,
       {
         headers: {
@@ -46,7 +47,7 @@ export const createProduct = async (token, data) => {
 export const editProduct = async (token, id, data) => {
   try {
     const res = await axios.put(
-      "https://e-commerce-project-backend-mu.vercel.app/api/editproduct/" + id,
+      `${API_BASE_URL}/api/editproduct/` + id,
       data,
       {
         headers: {
@@ -64,7 +65,7 @@ export const editProduct = async (token, id, data) => {
 export const deleteProduct = async (token, id) => {
   try {
     const res = await axios.delete(
-      "https://e-commerce-project-backend-mu.vercel.app/api/deleteproduct/" + id,
+      `${API_BASE_URL}/api/deleteproduct/` + id,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -80,7 +81,7 @@ export const deleteProduct = async (token, id) => {
 
 export const upload = async (data) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/upload", data);
+    const res = await axios.post(`${API_BASE_URL}/api/upload`, data);
     console.log("api", res);
     return;
   } catch (err) {
@@ -92,7 +93,7 @@ export const upload = async (data) => {
 export const deleteProductImageBy = async (token, id, nameImage) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/deleteproductimageby/" + id,
+      `${API_BASE_URL}/api/deleteproductimageby/` + id,
       nameImage,
       {
         headers: {

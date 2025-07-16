@@ -7,6 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import numeral from "numeral";
+const API_BASE_URL = process.env.VITE_BACKEND
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 const Payment = () => {
@@ -135,7 +136,7 @@ const Payment = () => {
                 {item.images && item.images.length > 0 && item.images[0] ? (
                   <img
                     className="w-[240px] h-[180px]"
-                    src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.images[0].imageUrl}`}
+                    src={`${VITE_BACKEND}/uploads/${item.images[0].imageUrl}`}
                   />
                 ) : (
                   <div className="w-[240px] h-[180px] flex items-center px-16">

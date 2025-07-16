@@ -1,8 +1,9 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 export const checkOut = async (token, data) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/checkout", data, {
+    const res = await axios.post(`${API_BASE_URL}/api/checkout`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

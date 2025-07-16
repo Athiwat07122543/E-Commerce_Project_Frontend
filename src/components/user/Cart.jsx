@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import numeral from "numeral";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 const Cart = () => {
   const cart = useStore((state) => state.cart);
@@ -65,7 +66,7 @@ const Cart = () => {
                 {item.images && item.images.length > 0 && item.images[0] ? (
                   <img
                     className="w-[500px] h-[300px] p-4"
-                    src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.images[0].imageUrl}`}
+                    src={`${VITE_BACKEND}/uploads/${item.images[0].imageUrl}`}
                   />
                 ) : (
                   <div className="flex w-[500px] h-[300px] items-center px-40">

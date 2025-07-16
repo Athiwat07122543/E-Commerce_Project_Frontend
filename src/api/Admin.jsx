@@ -1,8 +1,9 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 export const listUser = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/listuser", {
+    const res = await axios.get(`${API_BASE_URL}/api/listuser`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -17,7 +18,7 @@ export const listUser = async (token) => {
 export const editUser = async (token, id, data) => {
   try {
     const res = await axios.put(
-      "https://e-commerce-project-backend-mu.vercel.app/api/edituser/" + id,
+      `${API_BASE_URL}/api/edituser/` + id,
       data,
       {
         headers: {
@@ -34,7 +35,7 @@ export const editUser = async (token, id, data) => {
 
 export const getOrders = async (token, page, limit, status) => {
   try {
-    const res = await axios.get(`https://e-commerce-project-backend-mu.vercel.app/api/orders`, {
+    const res = await axios.get(`${API_BASE_URL}/api/orders`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -53,7 +54,7 @@ export const getOrders = async (token, page, limit, status) => {
 
 export const updateOrder = async (token, order) => {
   try {
-    const res = await axios.put("https://e-commerce-project-backend-mu.vercel.app/api/order", order, {
+    const res = await axios.put(`${API_BASE_URL}/api/order`, order, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -67,7 +68,7 @@ export const updateOrder = async (token, order) => {
 
 export const ordersToDay = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/order", {
+    const res = await axios.get(`${API_BASE_URL}/api/order`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -81,7 +82,7 @@ export const ordersToDay = async (token) => {
 
 export const getOrdersMonthlySales = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/ordersmonthly", {
+    const res = await axios.get(`${API_BASE_URL}/api/ordersmonthly"`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -95,7 +96,7 @@ export const getOrdersMonthlySales = async (token) => {
 
 export const getTotalSalesToDay = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/totalsalestoday", {
+    const res = await axios.get(`${API_BASE_URL}/api/totalsalestoday`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

@@ -16,6 +16,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await login(data);
+      console.log(res)
       if (res.status == 400) {
         return toast.warning(res.data.message);
       }

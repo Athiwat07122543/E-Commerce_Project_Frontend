@@ -1,9 +1,10 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 export const addCategory = async (token, data) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/createcategory",
+      `${API_BASE_URL}/api/createcategory`,
       data,
       {
         headers: {
@@ -20,7 +21,7 @@ export const addCategory = async (token, data) => {
 
 export const listCategory = async () => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/getcategory");
+    const res = await axios.get(`${API_BASE_URL}/api/getcategory`);
     return res;
   } catch (err) {
     console.log(err);
@@ -31,7 +32,7 @@ export const listCategory = async () => {
 export const editCategory = async (token, id, data) => {
   try {
     const res = await axios.put(
-      "https://e-commerce-project-backend-mu.vercel.app/api/editcategory/" + id,
+      `${API_BASE_URL}/api/editcategory/` + id,
       data,
       {
         headers: {
@@ -49,7 +50,7 @@ export const editCategory = async (token, id, data) => {
 export const deleteCategory = async (token, id) => {
   try {
     const res = await axios.delete(
-      "https://e-commerce-project-backend-mu.vercel.app/api/deletecategory/" + id,
+      `${API_BASE_URL}/api/deletecategory/` + id,
       {},
       {
         headers: {

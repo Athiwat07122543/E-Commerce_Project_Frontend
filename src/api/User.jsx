@@ -1,8 +1,9 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 export const addAddress = async (token, form) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/address", form, {
+    const res = await axios.post(`${API_BASE_URL}/api/address`, form, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -16,7 +17,7 @@ export const addAddress = async (token, form) => {
 
 export const getAddress = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/address", {
+    const res = await axios.get(`${API_BASE_URL}/api/address`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -31,7 +32,7 @@ export const getAddress = async (token) => {
 export const changeAddressId = async (token, addressId) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/changeaddress",
+      `${API_BASE_URL}/api/changeaddress`,
       { addressId },
       {
         headers: {
@@ -49,7 +50,7 @@ export const changeAddressId = async (token, addressId) => {
 export const addCart = async (token, productId) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/addCart",
+      `${API_BASE_URL}/api/addCart`,
       { productId },
       {
         headers: {
@@ -67,7 +68,7 @@ export const addCart = async (token, productId) => {
 export const reduceCart = async (token, productId) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/reduceCart",
+      `${API_BASE_URL}/api/reduceCart`,
       { productId },
       {
         headers: {
@@ -84,7 +85,7 @@ export const reduceCart = async (token, productId) => {
 
 export const getCart = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/cart", {
+    const res = await axios.get(`${API_BASE_URL}/api/cart`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -98,7 +99,7 @@ export const getCart = async (token) => {
 export const updateStock = async (token) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/updatestock",
+      `${API_BASE_URL}/api/updatestock`,
       {},
       {
         headers: {
@@ -115,7 +116,7 @@ export const updateStock = async (token) => {
 
 export const clearCart = async (token) => {
   try {
-    const res = await axios.delete("https://e-commerce-project-backend-mu.vercel.app/api/cart", {
+    const res = await axios.delete(`${API_BASE_URL}/api/cart`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -129,7 +130,7 @@ export const clearCart = async (token) => {
 
 export const getOrderBy = async (token) => {
   try {
-    const res = await axios.get("https://e-commerce-project-backend-mu.vercel.app/api/orderby", {
+    const res = await axios.get(`${API_BASE_URL}/api/orderby`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

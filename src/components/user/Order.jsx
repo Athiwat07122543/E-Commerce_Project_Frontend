@@ -4,6 +4,7 @@ import { getOrderBy } from "../../api/User";
 import moment from "moment";
 import numeral from "numeral";
 import ReceiptPDF from "./card/ReceiptPDF";
+const API_BASE_URL = process.env.VITE_BACKEND
 
 const Order = () => {
   moment.locale("th");
@@ -51,7 +52,7 @@ const Order = () => {
                       {item.product.images.length > 0 ? (
                         <img
                           className="h-[140px] w-[200px]"
-                          src={`https://e-commerce-project-backend-mu.vercel.app/uploads/${item.product.images[0].imageUrl}`}
+                          src={`${VITE_BACKEND}/uploads/${item.product.images[0].imageUrl}`}
                           alt="product"
                         />
                       ) : (

@@ -1,7 +1,9 @@
 import axios from "axios";
+const API_BASE_URL = process.env.VITE_BACKEND
+
 export const login = async (data) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/login", data);
+    const res = await axios.post(`${API_BASE_URL}//api/login`, data);
     return res;
   } catch (err) {
     console.log(err);
@@ -11,7 +13,7 @@ export const login = async (data) => {
 
 export const register = async (data) => {
   try {
-    const res = await axios.post("https://e-commerce-project-backend-mu.vercel.app/api/register", data);
+    const res = await axios.post(`${API_BASE_URL}//api/register`, data);
     return res;
   } catch (err) {
     console.log(err);
@@ -22,7 +24,7 @@ export const register = async (data) => {
 export const checkRole = async (token) => {
   try {
     const res = await axios.post(
-      "https://e-commerce-project-backend-mu.vercel.app/api/checkrole",
+      `${API_BASE_URL}/api/checkrole`,
       {},
       {
         headers: {
