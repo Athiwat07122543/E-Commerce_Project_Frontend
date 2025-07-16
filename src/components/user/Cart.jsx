@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import numeral from "numeral";
-const API_BASE_URL = import.meta.env.VITE_BACKEND
+const VITE_BACKEND = import.meta.env.VITE_BACKEND
 
 const Cart = () => {
   const cart = useStore((state) => state.cart);
