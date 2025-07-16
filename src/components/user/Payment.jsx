@@ -7,7 +7,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import numeral from "numeral";
-const API_BASE_URL = import.meta.env.VITE_BACKEND
+const VITE_BACKEND = import.meta.env.VITE_BACKEND
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 const Payment = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import numeral from "numeral";
 import useStore from "../../../store/useStore";
 import { toast } from "react-toastify";
-const API_BASE_URL = import.meta.env.VITE_BACKEND
+const VITE_BACKEND = import.meta.env.VITE_BACKEND
 
 const DetailProduct = ({ data, onClose }) => {
   const [product, setProdct] = useState([]);

@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import DetailProduct from "./user/card/DetailProduct";
 import { toast } from "react-toastify";
 import numeral from "numeral";
-const API_BASE_URL = import.meta.env.VITE_BACKEND
+const VITE_BACKEND = import.meta.env.VITE_BACKEND
 
 const Home = () => {
   const actionUpdateCart = useStore((state) => state.actionUpdateCart);
@@ -48,7 +48,7 @@ const Home = () => {
                     <div className=" h-[200px] w-full text-center items-center">
                       {item.images && item.images.length > 0 ? (
                         <img
-                          src={`${API_BASE_URL}/uploads/${item.images[0].imageUrl}`}
+                          src={`${VITE_BACKEND}/uploads/${item.images[0].imageUrl}`}
                           alt={item.name}
                           className="object-cover h-full w-full hover:scale-105"
                           onClick={() => {

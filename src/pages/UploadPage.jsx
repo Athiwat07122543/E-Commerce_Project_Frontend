@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-const API_BASE_URL = import.meta.env.VITE_BACKEND
+const VITE_BACKEND = import.meta.env.VITE_BACKEND
 
 const UploadPage = () => {
   const hdUpdate = async (e) => {
