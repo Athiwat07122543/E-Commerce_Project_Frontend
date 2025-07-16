@@ -1,9 +1,9 @@
 import axios from "axios";
-const API_BASE_URL = process.env.VITE_BACKEND
+const API_BASE_URL = import.meta.env.VITE_BACKEND
 
 export const login = async (data) => {
   try {
-    const res = await axios.post(`${API_BASE_URL}//api/login`, data);
+    const res = await axios.post(`${API_BASE_URL}/api/login`, data);
     return res;
   } catch (err) {
     console.log(err);
@@ -13,7 +13,7 @@ export const login = async (data) => {
 
 export const register = async (data) => {
   try {
-    const res = await axios.post(`${API_BASE_URL}//api/register`, data);
+    const res = await axios.post(`${API_BASE_URL}/api/register`, data);
     return res;
   } catch (err) {
     console.log(err);

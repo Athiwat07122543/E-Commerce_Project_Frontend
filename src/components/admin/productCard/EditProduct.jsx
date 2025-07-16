@@ -4,7 +4,7 @@ import { deleteProductImageBy, editProduct } from "../../../api/Product";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import useStore from "../../../store/useStore";
-const API_BASE_URL = process.env.VITE_BACKEND
+const API_BASE_URL = import.meta.env.VITE_BACKEND
 
 const EditProduct = ({ onClose, data, getData }) => {
   const token = useStore((state) => state.token);

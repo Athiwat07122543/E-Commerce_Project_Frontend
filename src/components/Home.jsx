@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import DetailProduct from "./user/card/DetailProduct";
 import { toast } from "react-toastify";
 import numeral from "numeral";
-const API_BASE_URL = process.env.VITE_BACKEND
+const API_BASE_URL = import.meta.env.VITE_BACKEND
 
 const Home = () => {
   const actionUpdateCart = useStore((state) => state.actionUpdateCart);

@@ -4,7 +4,7 @@ import { getOrderBy } from "../../api/User";
 import moment from "moment";
 import numeral from "numeral";
 import ReceiptPDF from "./card/ReceiptPDF";
-const API_BASE_URL = process.env.VITE_BACKEND
+const API_BASE_URL = import.meta.env.VITE_BACKEND
 
 const Order = () => {
   moment.locale("th");

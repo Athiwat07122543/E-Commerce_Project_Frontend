@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_BASE_URL = process.env.VITE_BACKEND
+const API_BASE_URL = import.meta.env.VITE_BACKEND
 
 export const listProduct = async (count) => {
   try {
